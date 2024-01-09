@@ -4,9 +4,15 @@
       "type": "template-page",
       "settings": {
       }
+    },
+    "a9687e7d-a7ed-4c00-aed3-eb0fc6a08645": {
+      "type": "contact-form",
+      "settings": {
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "a9687e7d-a7ed-4c00-aed3-eb0fc6a08645"
   ]
 }
