@@ -67,7 +67,7 @@
             {% when 'variant_selector' %}
               <div class="my-3">
                 {% unless product.has_only_default_variant %}
-                  <div data-url="{{ product.url}}" data-section="{{ section.id }}">
+                  <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
                     {% for option in product.options_with_values %}
                       <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
@@ -89,8 +89,13 @@
                           {% endfor %}
                         </select>
                       </div>
+
+                      <!-- バリエーションの情報を取得 -->
+                      <script type="application/json">
+                        {{ product.variants | json }}
+                      </script>
                     {% endfor %}
-                  </div>
+                  </variant-selector>
                 {% endunless %}
               </div>
 
@@ -130,7 +135,24 @@
 </div>
 
 <script>
-  customElements.define("variant-selector");
+  class VariantSelector extends HTMLElement {
+    constructor(){
+      super();
+      this.addEventListener("change", this.onVariantChange);
+    }
+
+    // バリエーションが変更された時に発火するイベント
+    onVariantChange() {
+      this.getSelectedOptions();
+    }
+
+    // 選択されたバリエーションを取得する
+    getSelectedOptions() {
+      this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+      console.log(this.options);
+    }
+  }
+  customElements.define("variant-selector", VariantSelector);
 </script>
 
 <script>
