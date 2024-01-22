@@ -2,6 +2,52 @@
   "sections": {
     "template": {
       "type": "template-product",
+      "blocks": {
+        "vendor_m8tjhy": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "title_h3gpzc": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price_W33y8w": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_selector_wLFdLc": {
+          "type": "variant_selector",
+          "settings": {
+          }
+        },
+        "quantity_V4WqBC": {
+          "type": "quantity",
+          "settings": {
+          }
+        },
+        "description_VH8BHb": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "checkout_buttons_hzC8af": {
+          "type": "checkout_buttons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor_m8tjhy",
+        "title_h3gpzc",
+        "price_W33y8w",
+        "variant_selector_wLFdLc",
+        "quantity_V4WqBC",
+        "description_VH8BHb",
+        "checkout_buttons_hzC8af"
+      ],
       "settings": {
       }
     }
